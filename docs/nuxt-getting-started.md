@@ -58,11 +58,9 @@ Now that you've created your Nuxt project, you are ready to start building your 
 
 ---
 
-## Was this helpful?
+## Additional Resources
 
-- 🤩 Amazing
-- 🙂 Good
-- ☹️ Not great
-- 😰 Poor
-
-[Report an issue](https://github.com/NRSGroupofFresno/.github/issues) or [Edit this page on GitHub](https://github.com/NRSGroupofFresno/.github/edit/main/docs/nuxt-getting-started.md)
+- [Nuxt.js Official Documentation](https://nuxt.com/docs)
+- [Nuxt Installation Guide](https://nuxt.com/docs/getting-started/installation)
+- [Nuxt Concepts](https://nuxt.com/docs/guide/concepts)
+- [Nuxt Configuration](https://nuxt.com/docs/api/configuration/nuxt-config)
