@@ -43,10 +43,17 @@ bun run dev -o
 ### deno
 
 ```bash
-deno task dev -o
+deno task dev
 ```
 
-> **Note:** Depending on your Nuxt configuration, you may need to configure the open behavior in `nuxt.config.ts` for Deno.
+> **Note:** The `-o` flag behavior may depend on your Nuxt configuration. You can configure automatic browser opening in `nuxt.config.ts` by adding:
+> ```typescript
+> export default defineNuxtConfig({
+>   devServer: {
+>     open: true
+>   }
+> })
+> ```
 
 Well done! A browser window should automatically open for http://localhost:3000.
 
