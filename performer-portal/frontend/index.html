@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performer Portal - Live Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-music"></i>
+                <span class="brand-text">Performer Portal</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="#profile" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <a href="#earnings" class="nav-link">
+                    <i class="fas fa-dollar-sign"></i>
+                    Earnings
+                </a>
+                <a href="#schedule" class="nav-link">
+                    <i class="fas fa-calendar"></i>
+                    Schedule
+                </a>
+                <a href="#settings" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-live">
+                    <i class="fas fa-circle pulse"></i>
+                    Go Live
+                </button>
+                <div class="profile-avatar">
+                    <img src="https://via.placeholder.com/40" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="status-card">
+                <div class="status-header">
+                    <h3>Live Status</h3>
+                    <span class="status-badge offline">Offline</span>
+                </div>
+                <div class="status-info">
+                    <div class="info-item">
+                        <i class="fas fa-eye"></i>
+                        <span>0 Viewers</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>0:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-stats">
+                <h3>Today's Stats</h3>
+                <div class="stat-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="stat-content">
+                        <span class="stat-label">Earnings</span>
+                        <span class="stat-value">$0.00</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-gift"></i>
+                    <div class="stat-content">
+                        <span class="stat-label">Tips</span>
+                        <span class="stat-value">0</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-music"></i>
+                    <div class="stat-content">
+                        <span class="stat-label">Requests</span>
+                        <span class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upcoming-shows">
+                <h3>Next Shows</h3>
+                <div class="show-item">
+                    <div class="show-date">
+                        <div class="day">FRI</div>
+                        <div class="date">15</div>
+                    </div>
+                    <div class="show-info">
+                        <div class="show-title">Friday Night Mix</div>
+                        <div class="show-time">8:00 PM - 11:00 PM</div>
+                    </div>
+                </div>
+                <div class="show-item">
+                    <div class="show-date">
+                        <div class="day">SAT</div>
+                        <div class="date">16</div>
+                    </div>
+                    <div class="show-info">
+                        <div class="show-title">Saturday Sessions</div>
+                        <div class="show-time">9:00 PM - 12:00 AM</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <!-- Earnings Overview -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Earnings Overview</h2>
+                    <div class="time-filter">
+                        <button class="filter-btn active">Today</button>
+                        <button class="filter-btn">Week</button>
+                        <button class="filter-btn">Month</button>
+                        <button class="filter-btn">Year</button>
+                    </div>
+                </div>
+                <div class="earnings-grid">
+                    <div class="earnings-card">
+                        <div class="earnings-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="earnings-info">
+                            <div class="earnings-label">Total Earnings</div>
+                            <div class="earnings-amount">$1,247.50</div>
+                            <div class="earnings-change positive">
+                                <i class="fas fa-arrow-up"></i> 12.5% vs last week
+                            </div>
+                        </div>
+                    </div>
+                    <div class="earnings-card">
+                        <div class="earnings-icon purple">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="earnings-info">
+                            <div class="earnings-label">Average Tip</div>
+                            <div class="earnings-amount">$8.32</div>
+                            <div class="earnings-change positive">
+                                <i class="fas fa-arrow-up"></i> 5.2% vs last week
+                            </div>
+                        </div>
+                    </div>
+                    <div class="earnings-card">
+                        <div class="earnings-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="earnings-info">
+                            <div class="earnings-label">Active Subscribers</div>
+                            <div class="earnings-amount">143</div>
+                            <div class="earnings-change positive">
+                                <i class="fas fa-arrow-up"></i> 8 new this week
+                            </div>
+                        </div>
+                    </div>
+                    <div class="earnings-card">
+                        <div class="earnings-icon orange">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="earnings-info">
+                            <div class="earnings-label">Top Tipper</div>
+                            <div class="earnings-amount">MusicFan99</div>
+                            <div class="earnings-change">
+                                $127.00 this week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tip Menu Management -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Tip Menu</h2>
+                    <button class="btn-primary">
+                        <i class="fas fa-plus"></i> Add Item
+                    </button>
+                </div>
+                <div class="tip-menu-grid">
+                    <div class="tip-menu-item">
+                        <div class="tip-item-header">
+                            <span class="tip-icon">🎵</span>
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                        </div>
+                        <div class="tip-item-title">Request a Song</div>
+                        <div class="tip-item-price">$5.00</div>
+                        <div class="tip-item-stats">
+                            <span><i class="fas fa-fire"></i> 23 today</span>
+                        </div>
+                    </div>
+                    <div class="tip-menu-item">
+                        <div class="tip-item-header">
+                            <span class="tip-icon">📢</span>
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                        </div>
+                        <div class="tip-item-title">Shoutout</div>
+                        <div class="tip-item-price">$10.00</div>
+                        <div class="tip-item-stats">
+                            <span><i class="fas fa-fire"></i> 8 today</span>
+                        </div>
+                    </div>
+                    <div class="tip-menu-item">
+                        <div class="tip-item-header">
+                            <span class="tip-icon">🎸</span>
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                        </div>
+                        <div class="tip-item-title">Guitar Solo</div>
+                        <div class="tip-item-price">$15.00</div>
+                        <div class="tip-item-stats">
+                            <span><i class="fas fa-fire"></i> 5 today</span>
+                        </div>
+                    </div>
+                    <div class="tip-menu-item lovense-enabled">
+                        <div class="tip-item-header">
+                            <span class="tip-icon">💗</span>
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                        </div>
+                        <div class="tip-item-title">Vibe Control</div>
+                        <div class="tip-item-price">$20.00</div>
+                        <div class="tip-item-stats">
+                            <span class="lovense-badge">
+                                <i class="fas fa-heart"></i> Lovense
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Song Requests & Chat -->
+            <div class="two-column">
+                <!-- Song Requests -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Song Requests</h2>
+                        <span class="badge">3 Pending</span>
+                    </div>
+                    <div class="song-requests-list">
+                        <div class="song-request-item priority">
+                            <div class="request-header">
+                                <div class="request-user">
+                                    <img src="https://via.placeholder.com/32" alt="User">
+                                    <span>MusicLover123</span>
+                                </div>
+                                <div class="request-tip">$5.00</div>
+                            </div>
+                            <div class="request-song">
+                                <div class="song-title">One More Time</div>
+                                <div class="song-artist">Daft Punk</div>
+                            </div>
+                            <div class="request-message">"This is my favorite track!"</div>
+                            <div class="request-actions">
+                                <button class="btn-success"><i class="fas fa-check"></i> Accept</button>
+                                <button class="btn-secondary"><i class="fas fa-list"></i> Queue</button>
+                                <button class="btn-danger"><i class="fas fa-times"></i> Reject</button>
+                            </div>
+                        </div>
+                        <div class="song-request-item">
+                            <div class="request-header">
+                                <div class="request-user">
+                                    <img src="https://via.placeholder.com/32" alt="User">
+                                    <span>DanceFan99</span>
+                                </div>
+                            </div>
+                            <div class="request-song">
+                                <div class="song-title">Levels</div>
+                                <div class="song-artist">Avicii</div>
+                            </div>
+                            <div class="request-actions">
+                                <button class="btn-success"><i class="fas fa-check"></i> Accept</button>
+                                <button class="btn-secondary"><i class="fas fa-list"></i> Queue</button>
+                                <button class="btn-danger"><i class="fas fa-times"></i> Reject</button>
+                            </div>
+                        </div>
+                        <div class="song-request-item">
+                            <div class="request-header">
+                                <div class="request-user">
+                                    <img src="https://via.placeholder.com/32" alt="User">
+                                    <span>PartyKing</span>
+                                </div>
+                            </div>
+                            <div class="request-song">
+                                <div class="song-title">Titanium</div>
+                                <div class="song-artist">David Guetta ft. Sia</div>
+                            </div>
+                            <div class="request-actions">
+                                <button class="btn-success"><i class="fas fa-check"></i> Accept</button>
+                                <button class="btn-secondary"><i class="fas fa-list"></i> Queue</button>
+                                <button class="btn-danger"><i class="fas fa-times"></i> Reject</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Live Chat -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Live Chat</h2>
+                        <div class="chat-actions">
+                            <button class="btn-icon"><i class="fas fa-cog"></i></button>
+                        </div>
+                    </div>
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message viewer">
+                                <img src="https://via.placeholder.com/32" alt="User">
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="username">MusicFan99</span>
+                                        <span class="timestamp">10:23 PM</span>
+                                    </div>
+                                    <div class="message-text">Great set tonight! 🔥</div>
+                                </div>
+                            </div>
+                            <div class="chat-message performer">
+                                <img src="https://via.placeholder.com/32" alt="You">
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="username">DJ Awesome</span>
+                                        <span class="timestamp">10:24 PM</span>
+                                    </div>
+                                    <div class="message-text">Thanks! More coming up!</div>
+                                </div>
+                            </div>
+                            <div class="chat-message viewer">
+                                <img src="https://via.placeholder.com/32" alt="User">
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="username">DanceLover</span>
+                                        <span class="timestamp">10:25 PM</span>
+                                    </div>
+                                    <div class="message-text">Can you play some house music?</div>
+                                </div>
+                            </div>
+                            <div class="chat-message tip-notification">
+                                <i class="fas fa-gift"></i>
+                                <span><strong>MusicFan99</strong> tipped $5.00 for a song request!</span>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Type a message..." id="chatInput">
+                            <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Current Queue -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Current Queue</h2>
+                    <button class="btn-secondary">
+                        <i class="fas fa-sync"></i> Sync with Serato
+                    </button>
+                </div>
+                <div class="queue-list">
+                    <div class="queue-item now-playing">
+                        <div class="queue-position">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="queue-song">
+                            <div class="song-title">Don't Stop Believin'</div>
+                            <div class="song-artist">Journey</div>
+                        </div>
+                        <div class="queue-requester">
+                            <img src="https://via.placeholder.com/24" alt="User">
+                            <span>Requested by PartyGirl</span>
+                        </div>
+                        <div class="queue-time">3:45</div>
+                    </div>
+                    <div class="queue-item">
+                        <div class="queue-position">1</div>
+                        <div class="queue-song">
+                            <div class="song-title">September</div>
+                            <div class="song-artist">Earth, Wind & Fire</div>
+                        </div>
+                        <div class="queue-requester">
+                            <img src="https://via.placeholder.com/24" alt="User">
+                            <span>Requested by MusicFan99</span>
+                        </div>
+                        <div class="queue-actions">
+                            <button class="btn-icon"><i class="fas fa-arrow-up"></i></button>
+                            <button class="btn-icon"><i class="fas fa-arrow-down"></i></button>
+                            <button class="btn-icon"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="queue-item">
+                        <div class="queue-position">2</div>
+                        <div class="queue-song">
+                            <div class="song-title">Uptown Funk</div>
+                            <div class="song-artist">Mark Ronson ft. Bruno Mars</div>
+                        </div>
+                        <div class="queue-requester">
+                            <img src="https://via.placeholder.com/24" alt="User">
+                            <span>Requested by DanceFan</span>
+                        </div>
+                        <div class="queue-actions">
+                            <button class="btn-icon"><i class="fas fa-arrow-up"></i></button>
+                            <button class="btn-icon"><i class="fas fa-arrow-down"></i></button>
+                            <button class="btn-icon"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
