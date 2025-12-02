@@ -1,0 +1,38 @@
+{
+  "name": "performer-portal-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for DJ/Performer Portal - Manage profiles, tip menus, live chat, song requests, and earnings tracking",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "mcp",
+    "performer",
+    "dj",
+    "tip-menu",
+    "live-chat",
+    "song-requests",
+    "earnings"
+  ],
+  "author": "NRSGroupofFresno",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "uuid": "^9.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/uuid": "^9.0.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
