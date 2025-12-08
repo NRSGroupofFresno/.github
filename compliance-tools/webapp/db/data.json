@@ -1,0 +1,308 @@
+{
+  "organization": {
+    "id": 1,
+    "name": "My Business",
+    "businessType": "",
+    "ein": "",
+    "address": "",
+    "city": "Fresno",
+    "state": "CA",
+    "zip": "",
+    "phone": "",
+    "email": "",
+    "employeeCount": 0
+  },
+  "complianceCategories": [
+    {
+      "id": 1,
+      "name": "IRS Tax Compliance",
+      "level": "federal",
+      "agency": "Internal Revenue Service",
+      "website": "https://www.irs.gov",
+      "items": [
+        {"id": 101, "title": "Payroll Tax Deposits", "frequency": "per-schedule", "description": "Federal income tax, Social Security, Medicare"},
+        {"id": 102, "title": "Form 941 Quarterly", "frequency": "quarterly", "description": "Quarterly payroll tax return"},
+        {"id": 103, "title": "Form 940 Annual", "frequency": "annually", "dueMonth": 1, "description": "Annual FUTA return"},
+        {"id": 104, "title": "W-2 Distribution", "frequency": "annually", "dueMonth": 1, "description": "Wage statements to employees"},
+        {"id": 105, "title": "1099-NEC Filing", "frequency": "annually", "dueMonth": 1, "description": "Non-employee compensation"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "DOL Employment",
+      "level": "federal",
+      "agency": "Department of Labor",
+      "website": "https://www.dol.gov",
+      "items": [
+        {"id": 201, "title": "Minimum Wage Compliance", "frequency": "ongoing", "description": "Federal minimum wage $7.25/hr (CA higher)"},
+        {"id": 202, "title": "Overtime Compliance", "frequency": "ongoing", "description": "1.5x over 40 hours/week"},
+        {"id": 203, "title": "FMLA Tracking", "frequency": "as-needed", "description": "Family Medical Leave (50+ employees)"},
+        {"id": 204, "title": "Required Posters", "frequency": "annually", "description": "FLSA, FMLA, USERRA posters"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "OSHA Safety",
+      "level": "federal",
+      "agency": "OSHA",
+      "website": "https://www.osha.gov",
+      "items": [
+        {"id": 301, "title": "OSHA Poster", "frequency": "ongoing", "description": "Job Safety and Health poster"},
+        {"id": 302, "title": "OSHA 300 Log", "frequency": "ongoing", "description": "Injury/illness recordkeeping (10+ employees)"},
+        {"id": 303, "title": "OSHA 300A Posting", "frequency": "annually", "dueMonth": 2, "description": "Post Feb 1 - Apr 30"},
+        {"id": 304, "title": "Hazard Communication", "frequency": "ongoing", "description": "Written program, SDS, training"}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "I-9 Immigration",
+      "level": "federal",
+      "agency": "USCIS",
+      "website": "https://www.uscis.gov",
+      "items": [
+        {"id": 401, "title": "I-9 Completion", "frequency": "per-hire", "description": "Within 3 business days of hire"},
+        {"id": 402, "title": "I-9 Reverification", "frequency": "as-needed", "description": "When work authorization expires"},
+        {"id": 403, "title": "I-9 Retention", "frequency": "ongoing", "description": "3 years from hire OR 1 year after termination"}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "EDD Payroll Taxes",
+      "level": "state",
+      "agency": "Employment Development Department",
+      "website": "https://www.edd.ca.gov",
+      "items": [
+        {"id": 1001, "title": "DE 9/DE 9C Filing", "frequency": "quarterly", "description": "Quarterly contribution and wage report"},
+        {"id": 1002, "title": "New Hire Reporting", "frequency": "per-hire", "description": "Report within 20 days of hire"},
+        {"id": 1003, "title": "UI/ETT/SDI Deposits", "frequency": "quarterly", "description": "State payroll tax deposits"},
+        {"id": 1004, "title": "PFL Notice", "frequency": "ongoing", "description": "Paid Family Leave employee notice"}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "FTB State Tax",
+      "level": "state",
+      "agency": "Franchise Tax Board",
+      "website": "https://www.ftb.ca.gov",
+      "items": [
+        {"id": 1101, "title": "Annual Tax Return", "frequency": "annually", "description": "Form 100, 100S, 568, or 565"},
+        {"id": 1102, "title": "Estimated Tax Payments", "frequency": "quarterly", "description": "Apr 15, Jun 15, Sep 15, Jan 15"},
+        {"id": 1103, "title": "Minimum Franchise Tax", "frequency": "annually", "description": "$800 minimum for most entities"},
+        {"id": 1104, "title": "LLC Fee", "frequency": "annually", "description": "Additional fee based on gross income"}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "CDTFA Sales Tax",
+      "level": "state",
+      "agency": "CDTFA",
+      "website": "https://www.cdtfa.ca.gov",
+      "items": [
+        {"id": 1201, "title": "Seller's Permit", "frequency": "ongoing", "description": "Required if selling tangible goods"},
+        {"id": 1202, "title": "Sales Tax Filing", "frequency": "per-schedule", "description": "Monthly, quarterly, or annually"},
+        {"id": 1203, "title": "Use Tax Payment", "frequency": "per-schedule", "description": "On untaxed purchases"}
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cal/OSHA Safety",
+      "level": "state",
+      "agency": "Cal/OSHA",
+      "website": "https://www.dir.ca.gov/dosh/",
+      "items": [
+        {"id": 1301, "title": "IIPP Written Program", "frequency": "ongoing", "description": "Injury & Illness Prevention Program REQUIRED"},
+        {"id": 1302, "title": "Safety Training Records", "frequency": "ongoing", "description": "Document all safety training"},
+        {"id": 1303, "title": "Heat Illness Prevention", "frequency": "ongoing", "description": "Required for outdoor workers"},
+        {"id": 1304, "title": "Cal/OSHA Poster", "frequency": "ongoing", "description": "California safety poster"}
+      ]
+    },
+    {
+      "id": 14,
+      "name": "DLSE Labor Law",
+      "level": "state",
+      "agency": "DLSE",
+      "website": "https://www.dir.ca.gov/dlse/",
+      "items": [
+        {"id": 1401, "title": "CA Minimum Wage", "frequency": "ongoing", "description": "$16.00/hr (2024) - check for updates"},
+        {"id": 1402, "title": "Meal Break Compliance", "frequency": "ongoing", "description": "30 min before 5th hour"},
+        {"id": 1403, "title": "Rest Break Compliance", "frequency": "ongoing", "description": "10 min per 4 hours"},
+        {"id": 1404, "title": "Itemized Pay Stubs", "frequency": "per-payroll", "description": "All required information"},
+        {"id": 1405, "title": "Final Wages", "frequency": "per-termination", "description": "Immediate if fired, 72hrs if quit"},
+        {"id": 1406, "title": "Harassment Training", "frequency": "biennial", "description": "2hr supervisors, 1hr others (5+ employees)"}
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Workers Compensation",
+      "level": "state",
+      "agency": "DIR",
+      "website": "https://www.dir.ca.gov/dwc/",
+      "items": [
+        {"id": 1501, "title": "WC Insurance Policy", "frequency": "annually", "description": "REQUIRED for all employers"},
+        {"id": 1502, "title": "WC Poster", "frequency": "ongoing", "description": "Notice to Employees poster"},
+        {"id": 1503, "title": "DWC-1 Forms", "frequency": "per-injury", "description": "Provide within 1 business day of injury"}
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Fresno Business License",
+      "level": "local",
+      "agency": "City of Fresno Finance",
+      "website": "https://www.fresno.gov/finance/business-license/",
+      "items": [
+        {"id": 2001, "title": "Business License", "frequency": "annually", "description": "Required for all businesses in Fresno"},
+        {"id": 2002, "title": "License Renewal", "frequency": "annually", "description": "Renew by anniversary date"},
+        {"id": 2003, "title": "Home Occupation Permit", "frequency": "annually", "description": "If operating from home"}
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Fresno Permits",
+      "level": "local",
+      "agency": "City of Fresno Planning",
+      "website": "https://www.fresno.gov/darm/",
+      "items": [
+        {"id": 2101, "title": "Zoning Compliance", "frequency": "ongoing", "description": "Verify permitted use"},
+        {"id": 2102, "title": "Building Permits", "frequency": "per-project", "description": "Construction, modifications"},
+        {"id": 2103, "title": "Sign Permit", "frequency": "per-sign", "description": "New or modified signage"}
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Fresno Fire",
+      "level": "local",
+      "agency": "Fresno Fire Department",
+      "website": "https://www.fresno.gov/fire/",
+      "items": [
+        {"id": 2201, "title": "Fire Inspection", "frequency": "annually", "description": "Annual fire safety inspection"},
+        {"id": 2202, "title": "Fire Extinguishers", "frequency": "annually", "description": "Annual maintenance/inspection"},
+        {"id": 2203, "title": "Exit Signs/Lighting", "frequency": "ongoing", "description": "Maintain emergency lighting"},
+        {"id": 2204, "title": "Fire Permits", "frequency": "as-needed", "description": "Special operations permits"}
+      ]
+    },
+    {
+      "id": 23,
+      "name": "County Health",
+      "level": "local",
+      "agency": "Fresno County Health",
+      "website": "https://www.co.fresno.ca.us/departments/public-health",
+      "items": [
+        {"id": 2301, "title": "Health Permit", "frequency": "annually", "description": "Required for food facilities"},
+        {"id": 2302, "title": "Food Handler Certs", "frequency": "per-employee", "description": "Food handler training"},
+        {"id": 2303, "title": "Health Inspection", "frequency": "per-schedule", "description": "Routine health inspections"}
+      ]
+    }
+  ],
+  "weeklyAudits": [],
+  "deadlines": [],
+  "licensesPermits": [],
+  "complianceStatus": {},
+  "faqCategories": [
+    {
+      "id": 1,
+      "name": "Starting a Business",
+      "icon": "rocket",
+      "questions": [
+        {
+          "id": 101,
+          "question": "What do I need to start a business in Fresno?",
+          "answer": "Generally you need: 1) Choose a business structure (LLC, Corp, etc.), 2) Register with CA Secretary of State, 3) Get EIN from IRS, 4) Obtain Fresno business license, 5) Get seller's permit if selling goods, 6) File fictitious business name if using DBA.",
+          "keywords": "start, begin, new, formation, setup"
+        },
+        {
+          "id": 102,
+          "question": "How much does it cost to start a business?",
+          "answer": "Common costs: LLC filing $70, Corporation $100, Business license varies by gross receipts, EIN is free, Seller's permit is free, CA minimum franchise tax $800/year. Additional costs depend on your specific business needs.",
+          "keywords": "cost, price, fee, money, expense"
+        },
+        {
+          "id": 103,
+          "question": "Do I need a business license for a home-based business?",
+          "answer": "Yes, in most cases. Fresno requires business licenses for home-based businesses. There may be zoning restrictions, limits on customer visits, signage rules, and employee limitations. Contact City of Fresno Finance at (559) 621-6880.",
+          "keywords": "home, house, residential, work from home"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Employment & HR",
+      "icon": "users",
+      "questions": [
+        {
+          "id": 201,
+          "question": "What is the minimum wage in Fresno/California?",
+          "answer": "California minimum wage for 2024 is $16.00/hour for all employers. Some industries (fast food, healthcare) have higher minimums. Always verify current rates as they typically increase January 1 each year.",
+          "keywords": "minimum wage, hourly, pay rate, salary"
+        },
+        {
+          "id": 202,
+          "question": "What breaks must I give employees?",
+          "answer": "California requires: MEAL BREAKS - 30 min unpaid before 5th hour, second meal before 10th hour. REST BREAKS - 10 min paid per 4 hours worked. Penalty: 1 hour pay per missed break.",
+          "keywords": "break, meal, rest, lunch, pause"
+        },
+        {
+          "id": 203,
+          "question": "Do I need workers compensation insurance?",
+          "answer": "YES - California requires workers comp for ALL employers with employees, even one part-time employee. Penalties include criminal charges, fines up to $100,000, and stop-work orders.",
+          "keywords": "workers comp, work comp, injury, insurance"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Taxes",
+      "icon": "calculator",
+      "questions": [
+        {
+          "id": 301,
+          "question": "What taxes does my business need to pay?",
+          "answer": "Common taxes: FEDERAL - Income tax, self-employment tax, payroll taxes (if employees), FUTA. STATE - CA income tax, LLC fee ($800+), sales tax (if selling goods), EDD payroll taxes. LOCAL - Business license tax.",
+          "keywords": "tax, taxes, irs, ftb, payment"
+        },
+        {
+          "id": 302,
+          "question": "Do I need to collect sales tax?",
+          "answer": "Generally YES if selling tangible goods in California. Get a seller's permit from CDTFA (free). Exemptions include most food for home consumption, prescription medicine, and sales for resale. Fresno rate varies by location.",
+          "keywords": "sales tax, collect, retail, selling"
+        },
+        {
+          "id": 303,
+          "question": "When are business taxes due?",
+          "answer": "Key dates: Estimated taxes Apr 15, Jun 15, Sep 15, Jan 15. Annual returns vary by entity (usually Mar 15 or Apr 15). Payroll taxes per deposit schedule. Sales tax monthly/quarterly/annually based on volume.",
+          "keywords": "due date, deadline, when, filing"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Licenses & Permits",
+      "icon": "file-text",
+      "questions": [
+        {
+          "id": 401,
+          "question": "What licenses and permits do I need?",
+          "answer": "Common requirements: Business license (all businesses), Seller's permit (selling goods), Health permit (food), Building permits (construction), Professional license (regulated professions), Fire permits (certain operations). Use CalGold.ca.gov for permit research.",
+          "keywords": "license, permit, registration, certificate"
+        },
+        {
+          "id": 402,
+          "question": "How do I renew my Fresno business license?",
+          "answer": "Fresno business licenses require annual renewal. Renew online, by mail, or in person at 2600 Fresno Street, Room 2156. Late fees apply for overdue renewals. Contact: (559) 621-6880 or fresno.gov/finance/business-license/",
+          "keywords": "renew, renewal, annual, expire"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {"id": 1, "name": "SCORE Fresno", "category": "business", "description": "Free business mentoring", "url": "https://fresno.score.org", "isFree": true},
+    {"id": 2, "name": "Fresno State SBDC", "category": "business", "description": "Small Business Development Center", "url": "https://www.fresnostate.edu/sbdc/", "phone": "559-278-2066", "isFree": true},
+    {"id": 3, "name": "CA Bar Lawyer Referral", "category": "legal", "description": "Find an attorney", "url": "https://www.calbar.ca.gov", "phone": "866-442-2529", "isFree": false},
+    {"id": 4, "name": "Central CA Legal Services", "category": "legal", "description": "Low-income legal help", "url": "https://www.centralcallegal.org", "phone": "559-570-1200", "isFree": true},
+    {"id": 5, "name": "City of Fresno Business License", "category": "government", "description": "Business licensing", "url": "https://www.fresno.gov/finance/business-license/", "phone": "559-621-6880", "isFree": true},
+    {"id": 6, "name": "IRS Small Business", "category": "tax", "description": "Federal tax resources", "url": "https://www.irs.gov/businesses", "phone": "800-829-4933", "isFree": true},
+    {"id": 7, "name": "EDD", "category": "tax", "description": "State employment taxes", "url": "https://www.edd.ca.gov", "phone": "888-745-3886", "isFree": true},
+    {"id": 8, "name": "CDTFA", "category": "tax", "description": "Sales tax", "url": "https://www.cdtfa.ca.gov", "isFree": true},
+    {"id": 9, "name": "Fresno Chamber", "category": "business", "description": "Business networking", "url": "https://fresnochamber.com", "isFree": false},
+    {"id": 10, "name": "VITA Free Tax Prep", "category": "tax", "description": "Free tax preparation", "url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers", "isFree": true}
+  ]
+}
