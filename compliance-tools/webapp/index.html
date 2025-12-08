@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresno Compliance Audit Tool | NRS Group</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">&#9878;</span>
+                <div class="logo-text">
+                    <h1>Fresno Compliance Audit Tool</h1>
+                    <span class="tagline">NRS Group of Fresno</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#dashboard" class="nav-link active" data-section="dashboard">Dashboard</a>
+                <a href="#compliance" class="nav-link" data-section="compliance">Compliance</a>
+                <a href="#weekly" class="nav-link" data-section="weekly">Weekly Audit</a>
+                <a href="#advocacy" class="nav-link" data-section="advocacy">Business Q&A</a>
+                <a href="#resources" class="nav-link" data-section="resources">Resources</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h2>Compliance Dashboard</h2>
+                <p class="section-subtitle">Fresno, California | Federal, State & Local Compliance</p>
+            </div>
+
+            <!-- Status Cards -->
+            <div class="status-grid">
+                <div class="status-card federal">
+                    <div class="status-icon">&#127279;</div>
+                    <div class="status-info">
+                        <h3>Federal</h3>
+                        <span class="status-badge pending">Review Needed</span>
+                    </div>
+                    <div class="status-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                </div>
+                <div class="status-card state">
+                    <div class="status-icon">&#127987;</div>
+                    <div class="status-info">
+                        <h3>California</h3>
+                        <span class="status-badge pending">Review Needed</span>
+                    </div>
+                    <div class="status-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                </div>
+                <div class="status-card local">
+                    <div class="status-icon">&#127969;</div>
+                    <div class="status-info">
+                        <h3>Fresno Local</h3>
+                        <span class="status-badge pending">Review Needed</span>
+                    </div>
+                    <div class="status-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="showSection('weekly')">
+                        <span class="action-icon">&#128197;</span>
+                        Start Weekly Audit
+                    </button>
+                    <button class="action-btn" onclick="showSection('compliance')">
+                        <span class="action-icon">&#9745;</span>
+                        Review Checklists
+                    </button>
+                    <button class="action-btn" onclick="showSection('advocacy')">
+                        <span class="action-icon">&#10067;</span>
+                        Ask a Question
+                    </button>
+                    <button class="action-btn" onclick="showDeadlines()">
+                        <span class="action-icon">&#128276;</span>
+                        View Deadlines
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upcoming Deadlines -->
+            <div class="deadlines-section">
+                <div class="section-title-row">
+                    <h3>Upcoming Deadlines</h3>
+                    <button class="btn-link" onclick="showDeadlineModal()">+ Add Deadline</button>
+                </div>
+                <div class="deadlines-list" id="deadlines-list">
+                    <div class="empty-state">
+                        <p>No deadlines added yet.</p>
+                        <button class="btn-secondary" onclick="showDeadlineModal()">Add Your First Deadline</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h3>Recent Activity</h3>
+                <div class="activity-list" id="activity-list">
+                    <div class="empty-state">
+                        <p>No recent activity. Start tracking your compliance!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Checklists Section -->
+        <section id="compliance" class="section">
+            <div class="section-header">
+                <h2>Compliance Checklists</h2>
+                <p class="section-subtitle">Track your compliance with federal, state, and local requirements</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="federal">Federal</button>
+                <button class="filter-tab" data-filter="state">California</button>
+                <button class="filter-tab" data-filter="local">Fresno Local</button>
+            </div>
+
+            <!-- Compliance Categories -->
+            <div class="compliance-categories" id="compliance-categories">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Weekly Audit Section -->
+        <section id="weekly" class="section">
+            <div class="section-header">
+                <h2>Weekly Audit Tracker</h2>
+                <p class="section-subtitle">Track your weekly compliance activities</p>
+            </div>
+
+            <!-- Week Selector -->
+            <div class="week-selector">
+                <button class="btn-icon" id="prev-week">&larr;</button>
+                <span class="current-week" id="current-week">Week of December 2, 2024</span>
+                <button class="btn-icon" id="next-week">&rarr;</button>
+            </div>
+
+            <!-- Weekly Schedule -->
+            <div class="weekly-schedule">
+                <div class="day-card" data-day="monday">
+                    <div class="day-header">
+                        <h4>Monday</h4>
+                        <span class="day-focus">Federal Review</span>
+                    </div>
+                    <div class="day-tasks">
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Check IRS notices/correspondence</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Verify payroll tax deposits current</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Review I-9 compliance for new hires</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Check OSHA requirements</span>
+                        </label>
+                    </div>
+                    <div class="day-notes">
+                        <textarea placeholder="Notes for Monday..."></textarea>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="tuesday">
+                    <div class="day-header">
+                        <h4>Tuesday</h4>
+                        <span class="day-focus">State Review</span>
+                    </div>
+                    <div class="day-tasks">
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Check EDD correspondence</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Verify new hire reporting</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Review Cal/OSHA requirements</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Check FTB/CDTFA status</span>
+                        </label>
+                    </div>
+                    <div class="day-notes">
+                        <textarea placeholder="Notes for Tuesday..."></textarea>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="wednesday">
+                    <div class="day-header">
+                        <h4>Wednesday</h4>
+                        <span class="day-focus">Local Review</span>
+                    </div>
+                    <div class="day-tasks">
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Check business license status</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Review permit renewals</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Verify fire inspection status</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Check health permit (if applicable)</span>
+                        </label>
+                    </div>
+                    <div class="day-notes">
+                        <textarea placeholder="Notes for Wednesday..."></textarea>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="thursday">
+                    <div class="day-header">
+                        <h4>Thursday</h4>
+                        <span class="day-focus">Documentation</span>
+                    </div>
+                    <div class="day-tasks">
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Update employee files</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>File completed paperwork</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Update training records</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Backup digital records</span>
+                        </label>
+                    </div>
+                    <div class="day-notes">
+                        <textarea placeholder="Notes for Thursday..."></textarea>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="friday">
+                    <div class="day-header">
+                        <h4>Friday</h4>
+                        <span class="day-focus">Planning</span>
+                    </div>
+                    <div class="day-tasks">
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Review upcoming deadlines</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Plan next week's tasks</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Note questions for professionals</span>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" class="task-checkbox">
+                            <span>Complete weekly summary</span>
+                        </label>
+                    </div>
+                    <div class="day-notes">
+                        <textarea placeholder="Notes for Friday..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Summary -->
+            <div class="weekly-summary">
+                <h3>Weekly Summary</h3>
+                <div class="summary-stats">
+                    <div class="stat-box">
+                        <span class="stat-number" id="tasks-completed">0</span>
+                        <span class="stat-label">Tasks Completed</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" id="tasks-remaining">20</span>
+                        <span class="stat-label">Tasks Remaining</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" id="completion-rate">0%</span>
+                        <span class="stat-label">Completion Rate</span>
+                    </div>
+                </div>
+                <div class="summary-actions">
+                    <button class="btn-primary" onclick="saveWeeklyAudit()">Save Progress</button>
+                    <button class="btn-secondary" onclick="exportWeeklyAudit()">Export Report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Advocacy Q&A Section -->
+        <section id="advocacy" class="section">
+            <div class="section-header">
+                <h2>Business Advocacy Q&A</h2>
+                <p class="section-subtitle">Non-Attorney Resource for Common Business Questions</p>
+            </div>
+
+            <!-- Disclaimer Banner -->
+            <div class="disclaimer-banner">
+                <strong>Non-Attorney Advocacy Notice:</strong> This information is for educational purposes only and does not constitute legal advice. Consult a licensed attorney for legal matters.
+            </div>
+
+            <!-- Search -->
+            <div class="search-box">
+                <input type="text" id="faq-search" placeholder="Search questions... (e.g., 'minimum wage', 'business license')">
+                <button class="search-btn" onclick="searchFAQ()">Search</button>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories" id="faq-categories">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results" id="search-results" style="display: none;">
+                <h3>Search Results</h3>
+                <div class="results-list"></div>
+            </div>
+
+            <!-- Need More Help -->
+            <div class="need-help-box">
+                <h3>Need More Help?</h3>
+                <p>For complex questions, consult these resources:</p>
+                <div class="help-links">
+                    <a href="https://www.calbar.ca.gov" target="_blank" class="help-link">
+                        <span class="help-icon">&#9878;</span>
+                        CA Bar Lawyer Referral
+                    </a>
+                    <a href="https://fresno.score.org" target="_blank" class="help-link">
+                        <span class="help-icon">&#128188;</span>
+                        SCORE Free Mentoring
+                    </a>
+                    <a href="https://www.fresnostate.edu/sbdc/" target="_blank" class="help-link">
+                        <span class="help-icon">&#127891;</span>
+                        Fresno State SBDC
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="section-header">
+                <h2>Resources</h2>
+                <p class="section-subtitle">Helpful links and contacts for Fresno businesses</p>
+            </div>
+
+            <!-- Resource Filter -->
+            <div class="resource-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="government">Government</button>
+                <button class="filter-btn" data-category="tax">Tax</button>
+                <button class="filter-btn" data-category="legal">Legal</button>
+                <button class="filter-btn" data-category="business">Business</button>
+            </div>
+
+            <!-- Resources Grid -->
+            <div class="resources-grid" id="resources-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Quick Contacts -->
+            <div class="quick-contacts">
+                <h3>Quick Contacts</h3>
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <h4>City of Fresno Business License</h4>
+                        <p><strong>Phone:</strong> (559) 621-6880</p>
+                        <p><strong>Address:</strong> 2600 Fresno Street, Room 2156</p>
+                        <a href="https://www.fresno.gov/finance/business-license/" target="_blank">Visit Website</a>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Fresno Fire Prevention</h4>
+                        <p><strong>Phone:</strong> (559) 621-4170</p>
+                        <p><strong>Address:</strong> 911 H Street</p>
+                        <a href="https://www.fresno.gov/fire/" target="_blank">Visit Website</a>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Fresno County Health</h4>
+                        <p><strong>Phone:</strong> (559) 600-3357</p>
+                        <p><strong>Address:</strong> 1221 Fulton Street</p>
+                        <a href="https://www.co.fresno.ca.us/departments/public-health" target="_blank">Visit Website</a>
+                    </div>
+                    <div class="contact-card">
+                        <h4>EDD (State Employment)</h4>
+                        <p><strong>Phone:</strong> (888) 745-3886</p>
+                        <a href="https://www.edd.ca.gov" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <p><strong>NRS Group of Fresno</strong> - Compliance Audit Tool</p>
+                <p class="footer-disclaimer">Non-Attorney Advocacy Resource - For Educational Purposes Only</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.fresno.gov" target="_blank">City of Fresno</a>
+                <a href="https://www.co.fresno.ca.us" target="_blank">Fresno County</a>
+                <a href="https://www.ca.gov" target="_blank">State of California</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Deadline Modal -->
+    <div class="modal" id="deadline-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Deadline</h3>
+                <button class="modal-close" onclick="closeModal('deadline-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="deadline-form">
+                    <div class="form-group">
+                        <label for="deadline-title">Title</label>
+                        <input type="text" id="deadline-title" required placeholder="e.g., Business License Renewal">
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-date">Due Date</label>
+                        <input type="date" id="deadline-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-category">Category</label>
+                        <select id="deadline-category">
+                            <option value="tax">Tax</option>
+                            <option value="license">License/Permit</option>
+                            <option value="filing">Filing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-level">Level</label>
+                        <select id="deadline-level">
+                            <option value="federal">Federal</option>
+                            <option value="state">State</option>
+                            <option value="local">Local</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline-notes">Notes</label>
+                        <textarea id="deadline-notes" placeholder="Additional details..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('deadline-modal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Deadline</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compliance Detail Modal -->
+    <div class="modal" id="compliance-modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="compliance-modal-title">Compliance Category</h3>
+                <button class="modal-close" onclick="closeModal('compliance-modal')">&times;</button>
+            </div>
+            <div class="modal-body" id="compliance-modal-body">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
