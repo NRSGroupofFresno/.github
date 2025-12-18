@@ -63,8 +63,8 @@ git commit -m "Fix navigation menu alignment on mobile devices"
 git commit -m "Add user profile validation logic"
 git commit -m "Update dependencies to latest stable versions"
 
-# Multi-line commit message
-git commit -m "Refactor authentication module" -m "Extract validation logic into separate functions" -m "Add comprehensive error handling" -m "Update tests to cover new scenarios"
+# Multi-line commit message (subject and body)
+git commit -m "Refactor authentication module" -m "Extract validation logic into separate functions. Add comprehensive error handling and update tests to cover new scenarios."
 ```
 
 ### Amending Commits
@@ -136,7 +136,8 @@ git pull --rebase
 git fetch origin
 
 # 2. View what changed
-git log HEAD..origin/main
+git log HEAD...origin/main  # See commits that differ
+git diff HEAD..origin/main  # See actual file changes
 
 # 3. Merge when ready
 git merge origin/main
