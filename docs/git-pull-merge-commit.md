@@ -64,7 +64,8 @@ git commit -m "Add user profile validation logic"
 git commit -m "Update dependencies to latest stable versions"
 
 # Multi-line commit message
-git commit -m "Refactor authentication module" -m "- Extract validation logic into separate functions
+git commit -m "Refactor authentication module" -m "
+- Extract validation logic into separate functions
 - Add comprehensive error handling
 - Update tests to cover new scenarios"
 ```
@@ -402,8 +403,8 @@ git push origin feature/shared-feature
 2. **Review Changes Before Merging**
    ```bash
    git fetch origin
-   git log HEAD..origin/main  # See what's new
-   git diff HEAD origin/main   # See actual changes
+   git log HEAD..origin/main   # See what's new
+   git diff HEAD..origin/main  # See actual changes
    git merge origin/main       # Merge when ready
    ```
 
@@ -482,10 +483,7 @@ git reset --hard HEAD~1
 # Abort the merge
 git merge --abort
 
-# Or abort the pull
-git reset --hard HEAD
-
-# Try a different strategy
+# Try a different strategy or resolve conflicts manually
 git pull --rebase origin main
 ```
 
