@@ -135,8 +135,8 @@ git pull --rebase
 # 1. Fetch changes to review before merging
 git fetch origin
 
-# 2. View what changed
-git log HEAD...origin/main  # See commits that differ
+# 2. View what's incoming from remote
+git log HEAD..origin/main   # See incoming commits
 git diff HEAD..origin/main  # See actual file changes
 
 # 3. Merge when ready
@@ -401,8 +401,8 @@ git push origin feature/shared-feature
 2. **Review Changes Before Merging**
    ```bash
    git fetch origin
-   git log origin/main...HEAD  # See what's new
-   git diff HEAD..origin/main  # See actual changes
+   git log HEAD..origin/main   # See incoming commits from remote
+   git diff HEAD..origin/main  # See actual file changes
    git merge origin/main       # Merge when ready
    ```
 
